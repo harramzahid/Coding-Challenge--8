@@ -38,3 +38,12 @@ class Manager extends Employee {
         console.log(`Employee name ${this.name} works as ${this.position} in the ${this.department} department, earning $${this.salary} annually and recieves a bonus of $${this.bonus}.`);
     }
 }
+// Task 4 Handle Bonuses for Managers
+Department.prototype.calculateTotalSalaryWithBonus = function() { 
+    return this.employees.reduce((total, employee) => {
+        if (employee instanceof Manager) { 
+            return total + employee.salary + employee.bonus;
+        } else {
+        return total + employee.salary; 
+    }}, ); 
+};
