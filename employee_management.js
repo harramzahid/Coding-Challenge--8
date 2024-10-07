@@ -11,3 +11,18 @@ class Employee {
        console.log(`${this.name} holds a ${this.position} position in the ${this.department} department, earning $${this.salary} annually.`);
    }
 }
+// Task 2 Create a Department Class
+// we are adding another class called department 
+class Department {
+    constructor(name,employees) {
+        this.name = name;
+        this.employees = [];
+    }
+            addEmployee(employee) {
+                this.employees.push(employee);
+    }
+    getDepartmentSalary() {
+        return this.employees.reduce((total, employee) =>
+             total + employee.salary); 
+    }
+}
